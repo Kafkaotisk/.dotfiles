@@ -1,0 +1,3 @@
+# .dotfiles
+
+Omarchy .dotfiles
