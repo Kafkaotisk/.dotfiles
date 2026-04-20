@@ -1,0 +1,12 @@
+// mako config for sounds.
+{
+  "custom/pomodoro": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "waybar-module-pomodoro", // to change time e.g "waybar-module-pomodoro -w 52 -s 17 -l 30" (-work 52 mins, -short break 17mins -long break 30mins)
+    "on-click": "waybar-module-pomodoro toggle",
+    "on-click-middle": "waybar-module-pomodoro stop",
+    "on-click-right": "waybar-module-pomodoro reset",
+    "tooltip": false
+  }
+}

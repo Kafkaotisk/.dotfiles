@@ -1,0 +1,8 @@
+{
+  "custom/nvim": {
+    "format": "",
+    "on-click": "ghostty -e nvim",
+    "icon-size": 32,
+    "tooltip-format": "Launch nvim"
+  }
+}
