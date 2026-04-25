@@ -46,10 +46,11 @@ map("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit Terminal" })
 -- toggle options
 Snacks.toggle.option("tabstops", { name = "Tabstops" }):map("<leader>uE")
 
+-- Need to change other plugins (neo-tree 't', prev search etc).
 -- hljk > hstn (dvorak)
-map({ "n", "v" }, "l", "s", { desc = "l > s" })
-map({ "n", "v" }, "s", "l", { desc = "s > l" })
-map({ "n", "v" }, "t", "j", { desc = "t > j" })
-map({ "n", "v" }, "j", "t", { desc = "j > t" })
-map({ "n", "v" }, "n", "k", { desc = "n > k" })
-map({ "n", "v" }, "k", "n", { desc = "k > n" })
+-- map({ "n", "v" }, "l", "s", { desc = "l > s" })
+-- map({ "n", "v" }, "s", "l", { desc = "s > l" })
+-- map({ "n", "v" }, "t", "j", { desc = "t > j" })
+-- map({ "n", "v" }, "j", "t", { desc = "j > t" })
+-- map({ "n", "v" }, "n", "k", { desc = "n > k" })
+-- map({ "n", "v" }, "k", "n", { desc = "k > n" })

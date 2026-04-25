@@ -35,10 +35,7 @@ cursor-style-blink = false
 # (all shell integration options must be passed together)
 shell-integration-features = no-cursor,ssh-env
 custom-shader-animation = always
-
-#  ┌──────────────────┐
-#  │    Shaders       │
-#  └──────────────────┘
+# Trailing cursor
 custom-shader = shaders/cursor_tail.glsl
 
 #  ┌─────────────────────────┐
