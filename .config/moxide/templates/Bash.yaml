@@ -14,7 +14,7 @@ windows:
   - name: Term
     layout: even-horizontal
     panes:
-      - ~/Documents/bash/
-      - 
+      -
+      -
 
 # -----------------------------------------
