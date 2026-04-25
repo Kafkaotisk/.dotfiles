@@ -1,0 +1,20 @@
+
+
+name: Python
+
+windows:
+  - name: Neovim
+    panes:
+      - nvim
+  - name: Yazi
+    panes:
+      - yazi
+  - name: Lazygit
+    panes:
+      - lazygit
+  - name: Term
+    layout: even-horizontal
+    panes:
+      - ~/Documents/autobooringstuff/
+      -
+# -----------------------------------------

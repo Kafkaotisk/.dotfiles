@@ -1,0 +1,6 @@
+name: Scripts
+
+root_dir: ~/.config/.scripts/
+template: Bash
+
+# ------------------------------------------
