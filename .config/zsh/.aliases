@@ -1,0 +1,112 @@
+# Make an alias for invoking commands you use constantly
+# alias p='python'
+# alias cx="claude --permission-mode=plan --allow-dangerously-skip-permissions"
+
+# File system
+if command -v eza  &> /dev/null; then
+  alias eza='eza --icons --group-directories-first'
+  alias ls='eza -lh --group-directories-first --icons=auto'
+  alias lsa='ls -a'
+  alias lt='eza --tree --level=2 --long --icons --git'
+  alias lta='lt -a'
+
+  alias 1="eza --icons"
+  alias la="eza -a --icons"
+  alias ll="eza -lbGF --git --icons"
+  alias l="eza -lbF --git --icons"
+
+# Tree views with eza
+  alias tree="eza --tree --level=2 --icons"
+  alias ltg="eza -T --level=2 --git --group-directories-first --icons"
+  alias lt1="eza -lTg --level=1 --icons"
+  alias lt2="eza -lTg --level=2 --icons"
+  alias lt3="eza -1Tg --level=3 --icons"
+  alias ltag="eza -lTag --icons"
+  alias lta1="eza -lTag --level=1 --icons"
+  alias lta2="eza -lTag --level=2 --icons"
+  alias lta3="eza -lTag --level=3 --icons"
+
+# Sorting aliases
+  alias lls="eza -alF --sort=size --icons"
+  alias llt="eza -alF --sort=modified --icons"
+  alias llm="eza -lbGd --git --sort=modified --icons"
+fi
+
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias eff='$EDITOR "$(ff)"'
+
+if command -v zoxide &> /dev/null; then
+  alias cd="zd"
+  zd() {
+    if (( $# == 0 )); then
+      builtin cd ~ || return
+    elif [[ -d $1 ]]; then
+      builtin cd "$1" || return
+    else
+      if ! z "$@"; then
+        echo "Error: Directory not found"
+        return 1
+      fi
+
+      printf "\U000F17A9 "
+      pwd
+    fi
+  }
+fi
+
+open() (
+  xdg-open "$@" >/dev/null 2>&1 &
+)
+
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Tools
+alias oc='opencode'
+alias cx='printf "\033[2J\033[3J\033[H" && claude --allow-dangerously-skip-permissions'
+alias dr='docker'
+alias py='python'
+alias mx="mise x --"
+alias txw='tmux attach || tmux new -s Work'
+alias txa='tmux attach -t'
+alias txn='tmux new -s'
+alias ms='moxide-sessions'
+alias vim='nvim'
+n() { if [ "$#" -eq 0 ]; then command nvim . ; else command nvim "$@"; fi; }
+alias cvlce='cvlc --play-and-exit'
+alias vlce='vlc --play-and-exit'
+alias icat="kitten icat"
+alias cl='clear'
+alias di='discordo'
+
+
+# Git
+alias g='git'
+alias ga='git add'
+alias gits='git status'
+alias gl='git log --oneline --graph --all'
+alias gcm='git commit -m'
+alias gcam='git commit -a -m'
+alias gcad='git commit -a --amend'
+# if bare repo
+#alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+#alias cs='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME. status'
+#alias ca='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add'
+#alias ccm='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME commit -m'
+#alias clo='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME log --oneline --graph --all'
+# if non-bare repo
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME'
+alias cs='/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME status'
+alias ca='/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME add'
+alias ccm='/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME commit -m'
+alias clo='/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME log --oneline --graph --all'
+alias cpo='config push -u origin main'
+
+# SwayOSD
+alias pp='swayosd-client --playerctl play-pause'
+alias nx='swayosd-client --playerctl next'
+alias pv='swayosd-client --playerctl previous'
+alias shu='swayosd-client --playerctl shuffle'
+
